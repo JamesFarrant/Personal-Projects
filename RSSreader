@@ -1,0 +1,15 @@
+import feedparser
+import time
+
+
+def python_rss_feed():
+    feed = feedparser.parse('http://www.reddit.com/r/python/.rss')
+
+    for post in feed.entries:
+        print(post.title + ':' + post.link + '\n')
+
+    time.sleep(60)
+
+
+while True:
+    python_rss_feed()
